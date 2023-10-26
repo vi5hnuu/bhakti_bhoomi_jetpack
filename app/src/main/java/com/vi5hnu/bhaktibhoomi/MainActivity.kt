@@ -12,12 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.vi5hnu.bhaktibhoomi.navigation.BhaktiBhoomiNavigation
 import com.vi5hnu.bhaktibhoomi.ui.theme.BhaktiBhoomiTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BhaktiBhoomiTheme {
+            BhaktiBhoomiTheme(dynamicColor = false) {
                 BhaktiBhoomiNavigation()
             }
         }
